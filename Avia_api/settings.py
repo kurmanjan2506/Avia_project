@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
+
+import rest_framework.permissions
 from datetime import timedelta
 from pathlib import Path
 from decouple import config
@@ -44,8 +46,14 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt.token_blacklist',
     'django_filters',
     'drf_yasg',
+
     # my_apps,
     'tickets',
+
+    # my_apps
+    'account'
+
+
 
 ]
 
