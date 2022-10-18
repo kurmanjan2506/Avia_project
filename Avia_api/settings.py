@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
 
-import rest_framework.permissions
+# from rest_framework import permissions
 from datetime import timedelta
 from pathlib import Path
 from decouple import config

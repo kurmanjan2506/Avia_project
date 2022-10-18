@@ -19,8 +19,8 @@ schema_view = get_schema_view(
    permission_classes=[permissions.AllowAny],
 )
 router = SimpleRouter()
-router.register('', TicketViewSet)
-router.register('', CompanyViewSet)
+router.register('tickets', TicketViewSet)
+router.register('companies', CompanyViewSet)
 
 urlpatterns = [
     re_path(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
@@ -28,10 +28,7 @@ urlpatterns = [
     re_path(r'^redoc/$', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
     path('admin/', admin.site.urls),
     path('api/v1/accounts/', include('account.urls')),
-# <<<<<<< HEAD
     path('api/v1/orders/', include('buy_tickets.urls')),
-# =======
     path('api/v1/', include(router.urls)),
-# >>>>>>> cce0060766b0934f9c8a832cb863ede925f3cddd
 ]
 

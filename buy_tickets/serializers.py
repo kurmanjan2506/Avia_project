@@ -30,6 +30,7 @@ class OrderSerializer(serializers.ModelSerializer):
         products = validated_data.pop('products')
         request = self.context['request']
         user = request.user
+        # date =
         order = Order.objects.create(user=user, status='open')
         for product in products:
             try:
