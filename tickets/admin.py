@@ -1,5 +1,7 @@
 from django.contrib import admin
-from .models import Ticket
+from .models import Ticket, Company
+
+admin.site.register(Company)
 
 
 @admin.register(Ticket)
