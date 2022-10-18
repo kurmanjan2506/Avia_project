@@ -1,10 +1,12 @@
 from django.shortcuts import render
-from rest_framework import permissions
+from rest_framework import permissions, generics
+from rest_framework.filters import SearchFilter
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.generics import GenericAPIView
 from rest_framework_simplejwt.views import TokenObtainPairView
 from .import serializers
+from .permissions import IsAccountOwner
 from .send_email import send_confirmation_email
 from django.contrib.auth import get_user_model
 
@@ -52,4 +54,18 @@ class LogoutView(GenericAPIView):
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response('Успешно вышел из системы!', status=204)
+
+
+class UserListView(generics.ListAPIView):
+    queryset = User.objects.all()
+    permission_classes = (permissions.IsAuthenticated,)
+    serializer_class = serializers.UserListSerializer
+    filter_backends = (SearchFilter,)
+    search_fields = ('username', 'email')
+
+
+class UserDetailView(generics.RetrieveAPIView):
+    queryset = User.objects.all()
+    permission_classes = (permissions.IsAuthenticated, IsAccountOwner)
+    serializer_class = serializers.UserDetailSerializer
 
