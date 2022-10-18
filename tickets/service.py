@@ -8,7 +8,7 @@ class CharFilterInFilter(filters.BaseInFilter, filters.CharFilter):
 
 class TicketFilter(filters.FilterSet):
     company = CharFilterInFilter(field_name='company', lookup_expr='in')
-    from_city = CharFilterInFilter(field_name='from_ti', lookup_expr='in')
+    from_city = CharFilterInFilter(field_name='from_city', lookup_expr='in')
     to_city = CharFilterInFilter(field_name='to_city', lookup_expr='in')
     price = filters.RangeFilter()
 
