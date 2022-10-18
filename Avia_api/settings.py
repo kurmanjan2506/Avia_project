@@ -51,7 +51,8 @@ INSTALLED_APPS = [
     'tickets',
 
     # my_apps
-    'account'
+    'account',
+    'buy_tickets',
 
 
 
@@ -106,7 +107,7 @@ DATABASES = {
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
-# AUTH_USER_MODEL = 'account.CustomUser'
+AUTH_USER_MODEL = 'account.CustomUser'
 
 AUTH_PASSWORD_VALIDATORS = [
     {
