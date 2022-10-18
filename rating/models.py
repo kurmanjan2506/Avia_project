@@ -1,4 +1,6 @@
 from django.db import models
+
+import tickets.models
 from tickets.models import Company
 from django.contrib.auth import get_user_model
 
@@ -15,7 +17,7 @@ class Mark:
 
 
 class Review(models.Model):
-    # company = models.ForeignKey(, on_delete=models.CASCADE, related_name='reviews')
+    company = models.ForeignKey(tickets.models.Company, on_delete=models.CASCADE, related_name='reviews', null=True)
     owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='reviews')
     rating = models.PositiveSmallIntegerField(choices=Mark.marks)
     text = models.TextField(blank=True)
