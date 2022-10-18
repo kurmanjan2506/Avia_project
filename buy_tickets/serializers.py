@@ -16,7 +16,9 @@ class OrderItemSerializer(serializers.ModelSerializer):
 
 
 class OrderSerializer(serializers.ModelSerializer):
-    products = OrderItemSerializer(write_only=True, many=True)
+    # departures = OrderItemSerializer(write_only=True, many=True)
+    # arrivals = OrderItemSerializer(write_only=True, many=True)
+
     status = serializers.CharField(read_only=True)
     user = serializers.ReadOnlyField(source='user.email')
 

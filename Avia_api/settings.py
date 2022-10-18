@@ -48,14 +48,18 @@ INSTALLED_APPS = [
     'drf_yasg',
 
     # my_apps,
+    'account',
     'tickets',
+# <<<<<<< HEAD
 
     # my_apps
-    'account',
+    # 'account',
     'buy_tickets',
 
 
 
+# =======
+# >>>>>>> cce0060766b0934f9c8a832cb863ede925f3cddd
 ]
 
 MIDDLEWARE = [
