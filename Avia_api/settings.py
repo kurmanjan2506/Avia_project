@@ -50,16 +50,14 @@ INSTALLED_APPS = [
     # my_apps,
     'account',
     'tickets',
-# <<<<<<< HEAD
+
 
     # my_apps
     # 'account',
     'buy_tickets',
 
+    'rating'
 
-
-# =======
-# >>>>>>> cce0060766b0934f9c8a832cb863ede925f3cddd
 ]
 
 MIDDLEWARE = [
