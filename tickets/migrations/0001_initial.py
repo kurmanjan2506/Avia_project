@@ -21,7 +21,7 @@ class Migration(migrations.Migration):
                 ('date', models.DateTimeField(blank=True)),
                 ('price', models.DecimalField(decimal_places=2, max_digits=12)),
                 ('count_of_product', models.SmallIntegerField(blank=True, null=True)),
-                ('images', models.ImageField(upload_to='media/images/')),
+                ('images', models.ImageField(upload_to='`/images/')),
             ],
         ),
     ]

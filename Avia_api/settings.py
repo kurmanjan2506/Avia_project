@@ -48,13 +48,8 @@ INSTALLED_APPS = [
     'drf_yasg',
 
     # my_apps,
+    'account',
     'tickets',
-
-    # my_apps
-    'account'
-
-
-
 ]
 
 MIDDLEWARE = [
@@ -106,7 +101,7 @@ DATABASES = {
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
-# AUTH_USER_MODEL = 'account.CustomUser'
+AUTH_USER_MODEL = 'account.CustomUser'
 
 AUTH_PASSWORD_VALIDATORS = [
     {

@@ -1,4 +1,7 @@
 from django.contrib import admin
-from .models import Tickets
+from .models import Ticket
 
-admin.site.register(Tickets)
+
+@admin.register(Ticket)
+class Tickets(admin.ModelAdmin):
+    list_display = ('company', 'from_city', 'to_city')
