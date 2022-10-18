@@ -1,15 +1,20 @@
 from django.db import models
 
 
-class Company:
-    tezjet = 'TEZ JET'
-    air_kyrgyzstan = 'Air Kyrgyzstan'
-    avia_traffic = 'Avia Traffic Company'
-    companies = ((tezjet, 'TEZ JET'), (air_kyrgyzstan, 'Air Kyrgyzstan'), (avia_traffic, 'Avia Traffic Company'))
+class Company(models.Model):
+    title = models.CharField(max_length=100)
+
+
+    class Meta:
+        verbose_name = 'Company'
+        verbose_name_plural = 'Companies'
+
+    def __str__(self):
+        return self.title
 
 
 class Ticket(models.Model):
-    company = models.CharField(choices=Company.companies, max_length=100)
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, related_name='companies')
     from_city = models.CharField(max_length=100)
     to_city = models.CharField(max_length=100)
     date = models.DateTimeField(blank=True, null=True)
