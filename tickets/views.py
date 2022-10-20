@@ -43,7 +43,7 @@ class CompanyViewSet(ModelViewSet):
         data = request.data
         serializer = ReviewSerializer(data=data)
         serializer.is_valid(raise_exception=True)
-        serializer.save(owner=request.user, product=ticket)
+        serializer.save(owner=request.user, company=ticket)
         return response.Response(serializer.data, status=201)
 
 
