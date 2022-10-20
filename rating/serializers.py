@@ -17,5 +17,5 @@ class LikeSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Like
-        fields = ('owner', 'movie')
+        fields = ('owner', 'review')
 

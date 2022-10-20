@@ -1,6 +1,7 @@
 from django.conf.urls import url
 from rest_framework.routers import SimpleRouter
 from account.views import auth
+from rating.views import ReviewViewSet
 from tickets.views import TicketViewSet, CompanyViewSet
 from django.contrib import admin
 from django.urls import path, include, re_path
@@ -23,6 +24,7 @@ schema_view = get_schema_view(
 router = SimpleRouter()
 router.register('tickets', TicketViewSet)
 router.register('companies', CompanyViewSet)
+router.register('reviews', ReviewViewSet)
 
 urlpatterns = [
     url('', include('social_django.urls', namespace='social')),

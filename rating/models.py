@@ -25,9 +25,9 @@ class Review(models.Model):
 
 class Like(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='liked')
-    movie = models.ForeignKey(Review, on_delete=models.CASCADE, related_name='likes')
+    review = models.ForeignKey(Review, on_delete=models.CASCADE, related_name='likes')
 
     class Meta:
-        unique_together = ['owner', 'movie']
+        unique_together = ['owner', 'review']
 
 
