@@ -4,6 +4,10 @@
     <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="ignoredPackages">
         <value>
+<<<<<<< HEAD
+          <list size="1">
+            <item index="0" class="java.lang.String" itemvalue="decouple" />
+=======
           <list size="10">
             <item index="0" class="java.lang.String" itemvalue="Django" />
             <item index="1" class="java.lang.String" itemvalue="psycopg2-binary" />
@@ -15,10 +19,13 @@
             <item index="7" class="java.lang.String" itemvalue="sqlparse" />
             <item index="8" class="java.lang.String" itemvalue="rest_auth" />
             <item index="9" class="java.lang.String" itemvalue="decouple" />
+>>>>>>> dc0373518012b25b4faef12de99ad39c5798283c
           </list>
         </value>
       </option>
     </inspection_tool>
+<<<<<<< HEAD
+=======
     <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
       <option name="ignoredErrors">
         <list>
@@ -28,6 +35,7 @@
         </list>
       </option>
     </inspection_tool>
+>>>>>>> dc0373518012b25b4faef12de99ad39c5798283c
     <inspection_tool class="PyShadowingBuiltinsInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
       <option name="ignoredNames">
         <list>
@@ -35,6 +43,8 @@
         </list>
       </option>
     </inspection_tool>
+<<<<<<< HEAD
+=======
     <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="ignoredIdentifiers">
         <list>
@@ -52,5 +62,6 @@
         </list>
       </option>
     </inspection_tool>
+>>>>>>> dc0373518012b25b4faef12de99ad39c5798283c
   </profile>
 </component>

@@ -26,7 +26,7 @@ class Ticket(models.Model):
     images = models.ImageField(upload_to='images', blank=True, null=True)
 
     def __str__(self):
-        return f'{self.from_city} -> {self.to_city}'
+        return f'{self.from_city} -> {self.to_city}\n{self.price}\n{self.date}->{self.time} '
 
 
 class Favorites(models.Model):

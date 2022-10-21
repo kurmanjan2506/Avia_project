@@ -1,7 +1,6 @@
 from django.conf.urls import url
 from rest_framework.routers import SimpleRouter
-from account.views import auth
-from rating.views import ReviewViewSet
+
 from tickets.views import TicketViewSet, CompanyViewSet
 from django.contrib import admin
 from django.urls import path, include, re_path
@@ -24,7 +23,7 @@ schema_view = get_schema_view(
 router = SimpleRouter()
 router.register('tickets', TicketViewSet)
 router.register('companies', CompanyViewSet)
-router.register('reviews', ReviewViewSet)
+
 
 urlpatterns = [
     url('', include('social_django.urls', namespace='social')),
@@ -33,6 +32,7 @@ urlpatterns = [
     path('docs/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('admin/', admin.site.urls),
     path('api/v1/accounts/', include('account.urls')),
+    path('api/v1/orders/', include('buy_tickets.urls')),
     path('api/v1/', include(router.urls)),
     path('auth/', auth),
     path('chat/', include('chat.urls')),

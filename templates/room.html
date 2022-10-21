@@ -4,6 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body {
+  background-color: #ebedef;
   margin: 0 auto;
   max-width: 800px;
   padding: 0 20px;
@@ -11,15 +12,15 @@ body {
 
 .container {
   border: 2px solid #dedede;
-  background-color: #f1f1f1;
+  background-color: #B7AFDF;
   border-radius: 5px;
   padding: 10px;
   margin: 10px 0;
 }
 
 .darker {
-  border-color: #ccc;
-  background-color: #ddd;
+  border-color: #C7C6C7;
+  background-color: #C7C6C7;
 }
 
 .container::after {
@@ -49,7 +50,7 @@ body {
 
 .time-left {
   float: left;
-  color: #999;
+  color: #BD3236;
 }
 </style>
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -94,6 +95,12 @@ setInterval(function(){
 
 <div class="container">
     <style>
+
+    body[type=text], select {
+    background-color: #0195ae;
+    }
+
+
     input[type=text], select {
     width: 100%;
     padding: 12px 20px;
@@ -121,8 +128,15 @@ setInterval(function(){
 
     div {
     border-radius: 5px;
-    background-color: #f2f2f2;
+    background-color: #759cd8;
     padding: 20px;
+    }
+    .send-btn{
+    width:100%;
+    height:50px;
+    border: 0.5px;
+    background:  #9cb9d1;
+
     }
     </style>
 
@@ -131,7 +145,7 @@ setInterval(function(){
         <input type="hidden" name="username" id="username" value="{{username}}"/>
         <input type="hidden" name="room_id" id="room_id" value="{{room_details.id}}"/>
         <input type="text" name="message" id="message" width="100px" />
-        <input type="submit" value="Send">
+        <button class="send-btn" type="submit" value="Send">Send</button>
     </form>
 </div>
 
