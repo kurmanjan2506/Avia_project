@@ -69,3 +69,6 @@ class UserDetailView(generics.RetrieveAPIView):
     permission_classes = (permissions.IsAuthenticated, IsAccountOwner)
     serializer_class = serializers.UserDetailSerializer
 
+
+def auth(request):
+    return render(request, 'oauth.html')
