@@ -1,5 +1,8 @@
+from django.conf.urls import url
 from rest_framework.routers import SimpleRouter
-from tickets.views import TicketViewSet
+from account.views import auth
+from rating.views import ReviewViewSet
+from tickets.views import TicketViewSet, CompanyViewSet
 from django.contrib import admin
 from django.urls import path, include, re_path
 from rest_framework import permissions
@@ -19,14 +22,19 @@ schema_view = get_schema_view(
    permission_classes=[permissions.AllowAny],
 )
 router = SimpleRouter()
-router.register('ticket', TicketViewSet)
+router.register('tickets', TicketViewSet)
+router.register('companies', CompanyViewSet)
+router.register('reviews', ReviewViewSet)
 
 urlpatterns = [
+    url('', include('social_django.urls', namespace='social')),
     re_path(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
-    path('docs/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     re_path(r'^redoc/$', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+    path('docs/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('admin/', admin.site.urls),
     path('api/v1/accounts/', include('account.urls')),
     path('api/v1/', include(router.urls)),
+    path('auth/', auth),
+    path('chat/', include('chat.urls')),
 ]
 
