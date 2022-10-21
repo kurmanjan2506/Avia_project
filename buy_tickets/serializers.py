@@ -1,5 +1,9 @@
+from django.shortcuts import get_object_or_404
 from rest_framework import serializers
 from .models import Order, OrderItem
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 
 class OrderItemSerializer(serializers.ModelSerializer):
@@ -16,31 +20,18 @@ class OrderItemSerializer(serializers.ModelSerializer):
 
 
 class OrderSerializer(serializers.ModelSerializer):
-    # departures = OrderItemSerializer(write_only=True, many=True)
-    # arrivals = OrderItemSerializer(write_only=True, many=True)
-
-    status = serializers.CharField(read_only=True)
-    user = serializers.ReadOnlyField(source='user.email')
-
     class Meta:
         model = Order
         fields = '__all__'
 
-    def create(self, validated_data):
-        products = validated_data.pop('products')
-        request = self.context['request']
-        user = request.user
-        # date =
-        order = Order.objects.create(user=user, status='open')
-        for product in products:
-            try:
-                OrderItem.objects.create(order=order, product=product['product'], quantity=product['quantity'])
-            except KeyError:
-                OrderItem.objects.create(order=order, product=product['product'])
-        return order
 
-    def to_representation(self, instance):
-        repr = super().to_representation(instance)
-        repr['products'] = OrderItemSerializer(instance.items.all(), many=True).data
-        repr.pop('product')
-        return repr
+class SendEmailSerializer(serializers.Serializer):
+    email = serializers.CharField()
+    message = serializers.ReadOnlyField()
+
+
+    def validate(self, attrs):
+        email = get_object_or_404(User, email=attrs.get('email'))
+        message = get_object_or_404(Order, first_name=['message'], last_name=['message'])
+        return attrs
+

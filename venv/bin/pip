@@ -1,4 +1,4 @@
-#!/home/maksat/Desktop/aviaproject/venv/bin/python3
+#!/home/maksat/Desktop/Avia_project/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

@@ -1,4 +1,6 @@
 from rest_framework.routers import SimpleRouter
+
+from buy_tickets.views import CreateOrderView
 from tickets.views import TicketViewSet, CompanyViewSet
 from django.contrib import admin
 from django.urls import path, include, re_path
@@ -21,6 +23,7 @@ schema_view = get_schema_view(
 router = SimpleRouter()
 router.register('tickets', TicketViewSet)
 router.register('companies', CompanyViewSet)
+# router.register('order', CreateOrderView)
 
 urlpatterns = [
     re_path(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),

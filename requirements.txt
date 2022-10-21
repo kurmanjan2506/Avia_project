@@ -1,8 +1,8 @@
-Django
+Django~=4.1.1
 psycopg2-binary
 Pillow
-djangorestframework
+djangorestframework~=3.14.0
 drf-yasg
-Django-filter
+Django-filter~=22.1
 python-decouple
 djangorestframework-simplejwt
