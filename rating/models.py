@@ -1,7 +1,6 @@
 from django.db import models
 
 import tickets.models
-from tickets.models import Company
 from django.contrib.auth import get_user_model
 
 User = get_user_model()
@@ -22,5 +21,13 @@ class Review(models.Model):
     rating = models.PositiveSmallIntegerField(choices=Mark.marks)
     text = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now=True)
+
+
+class Like(models.Model):
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='liked')
+    review = models.ForeignKey(Review, on_delete=models.CASCADE, related_name='likes')
+
+    class Meta:
+        unique_together = ['owner', 'review']
 
 
