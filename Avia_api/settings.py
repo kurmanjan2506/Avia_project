@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
+
 from datetime import timedelta
 from pathlib import Path
 from decouple import config
@@ -49,8 +50,7 @@ INSTALLED_APPS = [
     # my_apps,
     'account',
     'tickets',
-    'rating',
-    'chat',
+
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6ab8e701-7d07-4307-a842-5c37c8155ec8" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Avia_api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Avia_api/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Avia_project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../buy_tickets/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../buy_tickets/migrations/0002_auto_20221017_1009.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../buy_tickets/migrations/0003_order_date.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../buy_tickets/migrations/0004_auto_20221018_0125.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../buy_tickets/migrations/0005_rename_departures_order_product.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../buy_tickets/migrations/0006_auto_20221018_0543.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../buy_tickets/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../buy_tickets/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../buy_tickets/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/../buy_tickets/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../buy_tickets/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../buy_tickets/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tickets/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tickets/migrations/0002_rename_tickets_ticket.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tickets/migrations/0003_auto_20221017_0946.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tickets/migrations/0004_alter_ticket_images.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tickets/migrations/0005_alter_ticket_images.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tickets/migrations/0006_auto_20221018_0556.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tickets/migrations/0007_alter_company_options.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tickets/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../tickets/models.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2GIobGzh6oQg2l24oi8q1eBl9hV" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/home/maksat/Desktop/Avia_project"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6ab8e701-7d07-4307-a842-5c37c8155ec8" name="Changes" comment="" />
+      <created>1666085528371</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1666085528371</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
