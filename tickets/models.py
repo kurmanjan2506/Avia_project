@@ -1,5 +1,8 @@
+from django.contrib.auth import get_user_model
 from django.db import models
 
+
+User = get_user_model()
 
 class Company(models.Model):
     title = models.CharField(max_length=100)
@@ -25,3 +28,10 @@ class Ticket(models.Model):
     def __str__(self):
         return f'{self.from_city} -> {self.to_city}'
 
+
+class Favorites(models.Model):
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='favorites')
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, related_name='favorites')
+
+    class Meta:
+        unique_together = ['owner', 'company']

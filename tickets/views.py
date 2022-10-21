@@ -2,10 +2,11 @@ from django.shortcuts import render
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import permissions, response
 from rest_framework.filters import SearchFilter
+from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 
 from rating.serializers import ReviewSerializer
-from .models import Ticket, Company
+from .models import Ticket, Company, Favorites
 from . import serializers
 from rest_framework.pagination import PageNumberPagination
 from .service import TicketFilter
@@ -45,6 +46,16 @@ class CompanyViewSet(ModelViewSet):
         serializer.is_valid(raise_exception=True)
         serializer.save(owner=request.user, company=ticket)
         return response.Response(serializer.data, status=201)
+
+    @action(['POST'], detail=True)
+    def favorite_action(self, request, pk):
+        company = self.get_object()
+        user = request.user
+        if user.favorites.filter(company=company).exists():
+            user.favorites.filter(company=company).delete()
+            return Response('Deleted From Favorites!', status=204)
+        Favorites.objects.create(owner=user, company=company)
+        return Response('Added to Favorites!', status=201)
 
 
 class TicketViewSet(ModelViewSet):

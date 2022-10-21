@@ -1,6 +1,6 @@
 from django.db.models import Avg
 from rest_framework import serializers
-from .models import Ticket, Company
+from .models import Ticket, Company, Favorites
 
 
 class CompanySerializer(serializers.ModelSerializer):
@@ -26,3 +26,14 @@ class TicketDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = Ticket
         fields = '__all__'
+
+
+class FavoritesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Favorites
+        fields = ('company',)
+
+    def to_representation(self, instance):
+        repr = super().to_representation(instance)
+        repr['companies'] = CompanySerializer(instance.companies).data
+        return repr
